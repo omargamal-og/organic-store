@@ -1,0 +1,55 @@
+<p>
+  <a routerLink="/admin/products/new" class="btn btn-primary">
+    New Product
+  </a>
+</p>
+
+<p-table
+  [value]="products"
+  [paginator]="true"
+  [rows]="5"
+  [rowsPerPageOptions]="[5, 10, 20]"
+  [globalFilterFields]="['title', 'price']"
+  sortMode="multiple"
+  responsiveLayout="scroll"
+  #dt>
+
+  <ng-template pTemplate="caption">
+    <div class="d-flex justify-content-end">
+      <input
+        pInputText
+        type="text"
+        (input)="dt.filterGlobal($any($event.target).value, 'contains')"
+        placeholder="Search products">
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="header">
+    <tr>
+      <th pSortableColumn="title">
+        Title
+        <p-sortIcon field="title"></p-sortIcon>
+      </th>
+
+      <th pSortableColumn="price">
+        Price
+        <p-sortIcon field="price"></p-sortIcon>
+      </th>
+
+      <th>Action</th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-product>
+    <tr>
+      <td>{{ product.title }}</td>
+      <td>{{ product.price | currency }}</td>
+      <td>
+        <a [routerLink]="['/admin/products', product.id]">
+          Edit
+        </a>
+      </td>
+    </tr>
+  </ng-template>
+
+</p-table>
