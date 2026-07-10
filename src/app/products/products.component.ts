@@ -2,38 +2,36 @@ import { Product } from './../models/product';
 import { Component } from '@angular/core';
 import { ProductService } from '../product.service';
 import { CommonModule } from '@angular/common';
-import { CategoryService } from '../category.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ProductFilterComponent } from './product-filter/product-filter.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, ProductFilterComponent, ProductCardComponent],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
 export class ProductsComponent {
   products: Product[] = [];
   filteredProducts: Product[] = [];
-  categories$: any;
   category = '';
 
   constructor(
-    private route: ActivatedRoute,
-    private productService: ProductService,
-    private categoryService: CategoryService
+  private route: ActivatedRoute,
+  private productService: ProductService,
   ) {
-    this.categories$ = this.categoryService.getCategories();
 
-    this.productService.getAll().subscribe(products => {
-      this.products = products as Product[];
-      this.applyFilter();
-    });
+  this.route.queryParamMap.subscribe(params => {
+    this.category = params.get('category') || '';
+    this.applyFilter();
+  });
 
-    this.route.queryParamMap.subscribe(params => {
-      this.category = params.get('category') || '';
-      this.applyFilter();
-    });
+  this.productService.getAll().subscribe(products => {
+    this.products = products as Product[];
+    this.applyFilter();
+  });
   }
 
   private applyFilter() {

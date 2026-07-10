@@ -5,11 +5,12 @@ import { FormsModule } from '@angular/forms'
 import { ProductService } from '../../product.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { take } from 'rxjs/operators';
+import { ProductCardComponent } from '../../products/product-card/product-card.component';
 
 @Component({
   selector: 'app-product-form',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ProductCardComponent],
   templateUrl: './product-form.component.html',
   styleUrl: './product-form.component.css'
 })
@@ -23,6 +24,7 @@ export class ProductFormComponent {
     private route: ActivatedRoute,
     private categoryService: CategoryService,
     private productService: ProductService) {
+
     this.categories$ = categoryService.getCategories();
 
     this.id = this.route.snapshot.paramMap.get('id');
