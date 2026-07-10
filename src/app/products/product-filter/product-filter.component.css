@@ -1,0 +1,9 @@
+.sticky-top {
+    top: 80px;
+}
+
+.list-group-item {
+  min-height: 55px;
+  display: flex;
+  align-items: center;
+}
