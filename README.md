@@ -1,27 +1,67 @@
-# MercadoApp
+# MercadoApp - 🛒 Organic Store
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.4.
+A modern e-commerce web application built with Angular and Firebase to demonstrate modern Angular development practices and component-based architecture.
 
-## Development server
+> 🚧 Status: In Progress
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Live Demo
 
-## Code scaffolding
+https://mercado-23a28.firebaseapp.com/
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## ✨ Features
 
-## Build
+- Firebase Authentication
+- Role-based Authorization
+- Product CRUD Operations
+- Category Management
+- Product Catalog
+- Product Filtering & Search
+- Shopping Cart
+- Reactive Forms & Validation
+- Responsive Design
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🛠 Technologies
 
-## Running unit tests
+- Angular
+- TypeScript
+- HTML5
+- CSS3
+- Bootstrap
+- Firebase
+- RxJS
+- Git & GitHub
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 📸 Screenshots
 
-## Running end-to-end tests
+Screenshots will be added soon.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## ⚙️ Installation
 
-## Further help
+```bash
+git clone https://github.com/omargamal-og/organic-store.git
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+cd organic-store
+
+npm install
+
+ng serve
+```
+
+Open:
+
+```
+http://localhost:4200
+```
+
+## 🚀 Future Improvements
+
+- Payment Integration
+- Wishlist
+- Order Tracking
+- Unit Testing
+
+## 👨‍💻 Author
+
+**Omar Gamal**
+
+GitHub: https://github.com/omargamal-og
