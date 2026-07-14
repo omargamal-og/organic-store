@@ -1,6 +1,18 @@
 .card {
     margin-bottom: 30px;
+    height: 100%;
+    transition: .25s;
+}
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.15);
 }
 .card-footer {
     padding: 0;
+    background: white;
+    border-top: 0;
+}
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
 }
